@@ -198,6 +198,10 @@ on boot
 
 # Services start here
 
+service adc_fixup /system/bin/cat /sys/devices/platform/msm_adc/batt_id
+     class main
+     oneshot
+
 service dhcpcd_wlan0 /system/bin/dhcpcd -aABDKL
     class main
     disabled
